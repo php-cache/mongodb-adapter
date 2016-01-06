@@ -1,5 +1,5 @@
 {
-    "name":              "cache/mongo-adapter",
+    "name":              "cache/mongodb-adapter",
     "description":       "A PSR-6 cache implementation using MongoDB. This implementation supports tags",
     "type":              "library",
     "license":           "MIT",
@@ -8,10 +8,10 @@
     [
         "cache",
         "psr-6",
-        "mongo",
+        "mongodb",
         "tag"
     ],
-    "homepage": "https://github.com/php-cache/mongo-adapter",
+    "homepage": "https://github.com/php-cache/mongodb-adapter",
     "authors":
     [
         {
@@ -28,7 +28,7 @@
     "require":
     {
         "php":                  "^5.5|^7.0",
-        "ext-mongo":            "*",
+        "ext-mongodb":          "*",
         "psr/cache":            "1.0.0",
         "cache/adapter-common": "^0.1",
         "cache/taggable-cache": "^0.2"
@@ -45,13 +45,13 @@
     "autoload":
     {
         "psr-4": {
-            "Cache\\Adapter\\Mongo\\": "src/"
+            "Cache\\Adapter\\MongoDB\\": "src/"
         }
     },
     "autoload-dev":
     {
         "psr-4": {
-            "Cache\\Adapter\\Mongo\\Tests\\": "tests/"
+            "Cache\\Adapter\\MongoDB\\Tests\\": "tests/"
         }
     }
 }

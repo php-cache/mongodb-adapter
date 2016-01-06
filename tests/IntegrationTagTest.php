@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of php-cache\mongo-adapter package.
+ * This file is part of php-cache\mongodb-adapter package.
  *
  * (c) 2015-2015 Aaron Scherer <aequasi@gmail.com>, Tobias Nyholm <tobias.nyholm@gmail.com>
  *
@@ -9,15 +9,15 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Cache\Adapter\Mongo\Tests;
+namespace Cache\Adapter\MongoDB\Tests;
 
-use Cache\Adapter\Mongo\MongoCachePool;
+use Cache\Adapter\MongoDB\MongoDBCachePool;
 use Cache\IntegrationTests\TaggableCachePoolTest;
 
 class IntegrationTagTest extends TaggableCachePoolTest
 {
     public function createCachePool()
     {
-        return new MongoCachePool();
+        return new MongoDBCachePool();
     }
 }

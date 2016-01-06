@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of php-cache\mongo-adapter package.
+ * This file is part of php-cache\mongodb-adapter package.
  *
  * (c) 2015-2015 Aaron Scherer <aequasi@gmail.com>, Tobias Nyholm <tobias.nyholm@gmail.com>
  *
@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Cache\Adapter\Mongo;
+namespace Cache\Adapter\MongoDB;
 
 use Cache\Adapter\Common\AbstractCachePool;
 use Psr\Cache\CacheItemInterface;
@@ -18,7 +18,7 @@ use MongoDB\Client;
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-class MongoCachePool extends AbstractCachePool
+class MongoDBCachePool extends AbstractCachePool
 {
     /**
      * @var Client
