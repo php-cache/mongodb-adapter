@@ -13,11 +13,10 @@ namespace Cache\Adapter\MongoDB;
 
 use Cache\Adapter\Common\AbstractCachePool;
 use Cache\Adapter\Common\CacheItem;
-use MongoDB\Driver\Exception\BulkWriteException;
-use Psr\Cache\CacheItemInterface;
+use MongoDB\BSON\UTCDateTime;
 use MongoDB\Collection;
 use MongoDB\Driver\Manager;
-use MongoDB\BSON\UTCDateTime;
+use Psr\Cache\CacheItemInterface;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
@@ -25,12 +24,11 @@ use MongoDB\BSON\UTCDateTime;
 class MongoDBCachePool extends AbstractCachePool
 {
     /**
-     * @var Collection
+     * @type Collection
      */
     private $collection;
 
     /**
-     *
      * @param Collection $collection
      */
     public function __construct(Collection $collection)
@@ -54,7 +52,6 @@ class MongoDBCachePool extends AbstractCachePool
             $item = new CacheItem($key, true, unserialize($object->data));
 
             if (isset($object->expiresAt)) {
-
                 $item->expiresAt($object->expiresAt->toDateTime());
             }
 
@@ -81,7 +78,7 @@ class MongoDBCachePool extends AbstractCachePool
     protected function storeItemInCache($key, CacheItemInterface $item, $ttl)
     {
         $object = [
-            '_id' => $key, 
+            '_id'  => $key,
             'data' => serialize($item->get()),
         ];
 

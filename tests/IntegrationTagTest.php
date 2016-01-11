@@ -13,7 +13,6 @@ namespace Cache\Adapter\MongoDB\Tests;
 
 use Cache\Adapter\MongoDB\MongoDBCachePool;
 use Cache\IntegrationTests\TaggableCachePoolTest;
-use MongoDB\Driver\Manager;
 
 class IntegrationTagTest extends TaggableCachePoolTest
 {
