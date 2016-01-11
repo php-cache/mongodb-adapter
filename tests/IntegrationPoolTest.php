@@ -16,8 +16,10 @@ use Cache\IntegrationTests\CachePoolTest;
 
 class IntegrationPoolTest extends CachePoolTest
 {
+    use CreateServerTrait;
+
     public function createCachePool()
     {
-        return new MongoDBCachePool();
+        return new MongoDBCachePool($this->getCollection());
     }
 }

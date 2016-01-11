@@ -16,8 +16,10 @@ use Cache\IntegrationTests\TaggableCachePoolTest;
 
 class IntegrationTagTest extends TaggableCachePoolTest
 {
+    use CreateServerTrait;
+
     public function createCachePool()
     {
-        return new MongoDBCachePool();
+        return new MongoDBCachePool($this->getCollection());
     }
 }
