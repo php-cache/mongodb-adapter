@@ -13,6 +13,7 @@ namespace Cache\Adapter\MongoDB;
 
 use Cache\Adapter\Common\AbstractCachePool;
 use Cache\Adapter\Common\CacheItem;
+use MongoDB\Driver\Exception\BulkWriteException;
 use Psr\Cache\CacheItemInterface;
 use MongoDB\Collection;
 use MongoDB\Driver\Manager;
@@ -24,13 +25,13 @@ use MongoDB\BSON\UTCDateTime;
 class MongoDBCachePool extends AbstractCachePool
 {
     /**
-     * @var Client
+     * @var Collection
      */
     private $collection;
 
     /**
      *
-     * @param Client $client
+     * @param Collection $collection
      */
     public function __construct(Collection $collection)
     {

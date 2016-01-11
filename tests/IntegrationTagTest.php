@@ -17,13 +17,10 @@ use MongoDB\Driver\Manager;
 
 class IntegrationTagTest extends TaggableCachePoolTest
 {
+    use CreateServerTrait;
+
     public function createCachePool()
     {
-        $manager = new Manager("mongodb://".getenv('MONGODB_HOST'));
-
-        // In your own code, only do this *once* to initialize your cache
-        $collection = MongoDBCachePool::createCollection($manager, getenv('MONGODB_COLLECTION'));
-
-        return new MongoDBCachePool($collection);
+        return new MongoDBCachePool($this->getCollection());
     }
 }

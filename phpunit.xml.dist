@@ -19,7 +19,7 @@
 
   <php>
     <env name="MONGODB_HOST" value="localhost:27017"/>
-    <env name="MONGODB_COLLECTION" value="psr7test.cache"/>
+    <env name="MONGODB_COLLECTION" value="psr6test.cache"/>
   </php>
 
   <logging>
